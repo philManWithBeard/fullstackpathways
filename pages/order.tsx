@@ -1,6 +1,5 @@
 import { Container, Flex } from "@chakra-ui/react";
-import Cart from "../src/sections/cart";
-import Details from "../src/sections/details";
+import Details from "../src/sections/orderCart/details";
 
 const IndexPage = () => (
   <Container maxW="container.xl">

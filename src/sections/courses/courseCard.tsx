@@ -12,7 +12,6 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-import img1 from "/Users/phil/Documents/courserio/public/pablo-962.png";
 import * as React from "react";
 import { Rating } from "./rating";
 import { FavouriteButton } from "./favouriteButton";
@@ -24,7 +23,7 @@ interface Props {
 
 export const CourseCard = (props: Props) => {
   const { course, rootProps } = props;
-  const { name, imageUrl, price, salePrice, rating } = course;
+  const { name, imageUrl, price, salePrice, rating, ratingCount } = course;
   return (
     <Stack spacing={useBreakpointValue({ base: "4", md: "5" })} {...rootProps}>
       <Box position="relative">
@@ -51,17 +50,17 @@ export const CourseCard = (props: Props) => {
             color={useColorModeValue("gray.700", "gray.400")}>
             {name}
           </Text>
-          <PriceTag price={price} salePrice={salePrice} currency="USD" />
+          <PriceTag price={price} salePrice={salePrice} currency="GBP" />
         </Stack>
         <HStack>
           <Rating defaultValue={rating} size="sm" />
           <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
-            12 Reviews
+            {ratingCount}
           </Text>
         </HStack>
       </Stack>
       <Stack align="center">
-        <Button colorScheme="blue" isFullWidth>
+        <Button colorScheme="teal" isFullWidth>
           Add to cart
         </Button>
         <Link
