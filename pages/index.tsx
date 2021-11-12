@@ -10,7 +10,7 @@ export default function Landing() {
       <Hero
         title="Pick your Path to becoming a full stack developer"
         subtitle="Our bootcamp is designed to fit around your experience and your aspirations. You only have to pay for the modules you need."
-        image="https://github.com/philManWithBeard/courserio/blob/main/public/pablo-965.png?raw=true"
+        image="https://github.com/philManWithBeard/courserio/blob/main/public/pathways.png?raw=true"
         ctaText="Create your account now"
         ctaLink="/signup"
       />
