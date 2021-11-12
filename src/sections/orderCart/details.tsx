@@ -17,7 +17,7 @@ const Details = () => (
       <Heading size="2xl">Your details</Heading>
       <Text>If you already have an account, click here </Text>
     </VStack>
-    <SimpleGrid columns="2" columnGap="3" rowGap="6" w="full">
+    <SimpleGrid columns={2} columnGap="3" rowGap="6" w="full">
       <GridItem colSpan={1}>
         <FormControl>
           <FormLabel>First Name</FormLabel>

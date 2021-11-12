@@ -8,7 +8,6 @@ const IndexPage = () => (
       py={[0, 10, 20]}
       direction={{ base: "column-reverse", md: "row" }}>
       <Details />
-      <Cart />
     </Flex>
   </Container>
 );

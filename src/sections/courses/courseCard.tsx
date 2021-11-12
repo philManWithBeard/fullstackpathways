@@ -17,15 +17,11 @@ import { Rating } from "./rating";
 import { FavouriteButton } from "./favouriteButton";
 import { PriceTag } from "./priceTag";
 
-interface Props {
-  rootProps?: StackProps;
-}
-
-export const CourseCard = (props: Props) => {
-  const { course, rootProps } = props;
+export const CourseCard = (props: { course: any }) => {
+  const { course } = props;
   const { name, imageUrl, price, salePrice, rating, ratingCount } = course;
   return (
-    <Stack spacing={useBreakpointValue({ base: "4", md: "5" })} {...rootProps}>
+    <Stack spacing={useBreakpointValue({ base: "4", md: "5" })}>
       <Box position="relative">
         <AspectRatio ratio={4 / 3}>
           <Image
@@ -33,7 +29,7 @@ export const CourseCard = (props: Props) => {
             alt={name}
             draggable="false"
             fallback={<Skeleton />}
-            borderRadius={useBreakpointValue({ base: "md", md: "xl" })}
+            borderRadius={useBreakpointValue({ base: "  md", md: "xl" })}
           />
         </AspectRatio>
         <FavouriteButton

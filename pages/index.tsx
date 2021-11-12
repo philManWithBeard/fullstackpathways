@@ -4,7 +4,7 @@ import Hero from "../src/sections/hero/Hero";
 import ReverseHero from "../src/sections/hero/ReverseHero";
 import LandingLayout from "../src/layouts/LandingLayout";
 
-export default function Landing() {
+export default function Index() {
   return (
     <LandingLayout>
       <Hero
@@ -32,6 +32,13 @@ export default function Landing() {
         title="Complete the coursework, get graded and build your portfolio"
         subtitle="We'll review all of your work and ensure that it meets the standards that the industry expects"
         image="https://github.com/philManWithBeard/courserio/blob/main/public/pablo-page-under-construction.png?raw=true"
+        ctaText="Create your account now"
+        ctaLink="/signup"
+      />
+      <Hero
+        title="Prepare for interview"
+        subtitle="We'll help you apply for jobs and prepare you for your interview"
+        image="https://github.com/philManWithBeard/courserio/blob/main/public/pablo-865.png?raw=true"
         ctaText="Create your account now"
         ctaLink="/signup"
       />

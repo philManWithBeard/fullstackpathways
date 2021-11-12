@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
-
+import { FC } from "react";
 import Logo from "./logo";
 
-const NavBar = (props) => {
+const NavBar = (
+  props: JSX.IntrinsicAttributes & { [x: string]: any; children: any }
+) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -41,7 +43,12 @@ const MenuIcon = () => (
   </svg>
 );
 
-const MenuToggle = ({ toggle, isOpen }) => {
+interface MenuToggleProps {
+  toggle: () => void;
+  isOpen: boolean;
+}
+
+const MenuToggle: FC<MenuToggleProps> = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -49,7 +56,17 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+interface MenuItemProps {
+  isLast: boolean;
+  to: string;
+}
+
+const MenuItem: FC<MenuItemProps> = ({
+  children,
+  isLast,
+  to = "/",
+  ...rest
+}) => {
   return (
     <Link href={to}>
       <Text display="block" {...rest}>
@@ -59,7 +76,11 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+interface MenuLinksProps {
+  isOpen: boolean;
+}
+
+const MenuLinks: FC<MenuLinksProps> = ({ isOpen }) => {
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -70,9 +91,15 @@ const MenuLinks = ({ isOpen }) => {
         justify={["center", "space-between", "flex-end", "flex-end"]}
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}>
-        <MenuItem to="/">How It works</MenuItem>
-        <MenuItem to="/pathways">Pathways</MenuItem>
-        <MenuItem to="/tutors">Tutors</MenuItem>
+        <MenuItem to="/" isLast={false}>
+          How It works
+        </MenuItem>
+        <MenuItem to="/pathways" isLast={false}>
+          Pathways
+        </MenuItem>
+        <MenuItem to="/tutors" isLast={false}>
+          Tutors
+        </MenuItem>
         <MenuItem to="/signup" isLast>
           <Button size="sm" rounded="md" colorScheme="teal">
             Create Account
@@ -83,7 +110,9 @@ const MenuLinks = ({ isOpen }) => {
   );
 };
 
-const NavBarContainer = ({ children, ...props }) => {
+interface NavBarContainerProps {}
+
+const NavBarContainer: FC<NavBarContainerProps> = ({ children, ...props }) => {
   return (
     <Flex
       as="nav"

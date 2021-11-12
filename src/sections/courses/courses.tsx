@@ -1,5 +1,5 @@
 import { VStack, Heading, Text } from "@chakra-ui/react";
-import CourseCard from "../courseCard";
+import { CourseCard } from "./courseCard";
 
 const Courses = (props: { coursesData: any[] }) => (
   <VStack
@@ -11,7 +11,7 @@ const Courses = (props: { coursesData: any[] }) => (
     bg="gray.50">
     <div>
       {props.coursesData.map((course) => (
-        <CourseCard key={course.id} name={course.name} />
+        <CourseCard key={course.id} course={course} />
       ))}
     </div>
   </VStack>

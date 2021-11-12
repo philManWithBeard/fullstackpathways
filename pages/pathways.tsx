@@ -1,17 +1,15 @@
 import { courses } from "../src/sections/courses/coursesData";
-import { Container } from "@chakra-ui/react";
+import LandingLayout from "../src/layouts/LandingLayout";
 import { CourseGrid } from "../src/sections/courses/courseGrid";
 import { CourseCard } from "../src/sections/courses/courseCard";
-import NavBar from "../src/sections/header/header";
 
 const IndexPage = () => (
-  <Container maxW="container.xl">
-    <NavBar />
+  <LandingLayout>
     <CourseGrid>
       {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}
     </CourseGrid>
-  </Container>
+  </LandingLayout>
 );
 export default IndexPage;
