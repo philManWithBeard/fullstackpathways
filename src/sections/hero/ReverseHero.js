@@ -24,9 +24,8 @@ export default function ReverseHero({
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
-      minH="70vh"
+      minH="55vh"
       px={8}
-      mb={16}
       {...rest}>
       <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
         {/* TODO: Make this change every X secs */}
